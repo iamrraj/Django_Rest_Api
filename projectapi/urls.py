@@ -25,6 +25,7 @@ from account.views import (login_view, register_view, logout_view)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('', include('trangle.urls')),
 
     path('register/', register_view, name='register'),
     path('login/', login_view, name='login'),
@@ -34,6 +35,7 @@ urlpatterns = [
     path('api/users/', include(("account.api.urls","api/users/"), namespace='users-api')),
     path('api/comments/', include(("comments.api.urls","api/comments/"), namespace='comments-api')),
     path('api/posts/', include(("posts.api.urls","api/posts/"), namespace='posts-api')),
+    path('', include('Trang.urls'))
 ]
 
 if settings.DEBUG:

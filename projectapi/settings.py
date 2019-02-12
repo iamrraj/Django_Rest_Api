@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # local apps
     'comments',
     'posts',
+    'Trang',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -151,15 +152,21 @@ REST_FRAMEWORK = {
     #     'rest_framework.parsers.JSONParser',
     # )
     "DEFAULT_AUTHENTICATION_CLASSES": (
-         #'rest_framework.authentication.SessionAuthentication',
+        #  'rest_framework.authentication.SessionAuthentication',
          'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
-        #'rest_framework.authentication.BasicAuthentication'
+        #  'rest_framework.authentication.BasicAuthentication'
 
     ), 
     "DEFAULT_PERMISSION_CLASSES": (
         'rest_framework.permissions.IsAuthenticated',
-        #'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-    )
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ),
+#     "DEFAULT_AUTHENTICATION_CLASSES": (
+#        'rest_framework.authentication.TokenAuthentication',
+#    ),
+#     "DEFAULT_PERMISSION_CLASSES": (
+#             'rest_framework.permissions.IsAdminUser'
+#     ),
 }
 
 

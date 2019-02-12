@@ -14,7 +14,7 @@ from rest_framework.generics import (
     RetrieveUpdateAPIView
     )
 
-
+from rest_framework import generics
 
 from rest_framework.permissions import (
     AllowAny,
@@ -45,7 +45,7 @@ class PostCreateAPIView(CreateAPIView):
         serializer.save(user=self.request.user)
 
 
-class PostDetailAPIView(RetrieveAPIView):
+class PostDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostDetailSerializer
     lookup_field = 'slug'
@@ -73,7 +73,7 @@ class PostDeleteAPIView(DestroyAPIView):
     #lookup_url_kwarg = "abc"
 
 
-class PostListAPIView(ListAPIView):
+class PostListAPIView(generics.ListCreateAPIView):
     serializer_class = PostListSerializer
     filter_backends= [SearchFilter, OrderingFilter]
     permission_classes = [AllowAny]
