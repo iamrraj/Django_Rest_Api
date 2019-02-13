@@ -7,7 +7,7 @@
 1.  <p style="color:green;">For Post Api:-         http://localhost./api/posts</p>
 1.  <p style="color:green;">For Comment Api:- http://localhost./api/comments</p>
 
-1. ## <p style="color:green;">For Trianglr Api:-         http://localhost./api/trinagle</p>
+1. <p style="color:green;">For Trianglr Api:-         http://localhost./api/trinagle</p>
 
-*     Thanks & Regards
+
 *     Rahul Raj
